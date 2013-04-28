@@ -96,7 +96,7 @@ class PayU
 		$arr['TESTORDER'] = ( $this->debug == 1 ) ? "TRUE" : "FALSE";
 		$arr['DEBUG'] = $this->debug;
 		$arr['ORDER_HASH'] = $this->Signature( $this->checkArray( $arr ) );
-		$this->answer = $this->genereteForm( $arr );
+		$this->answer = $this->generateForm( $arr );
 		return $this;
 	}
 
@@ -118,7 +118,7 @@ class PayU
 #-----------------------------
 # Method which create a form
 #-----------------------------
-	private function genereteForm( $data )
+	private function generateForm( $data )
 	{	
 		$form = '<form method="post" action="'.$this->luUrl.'" accept-charset="utf-8">';
 		foreach ( $data as $k => $v ) $form .= $this->makeString( $k, $v );
